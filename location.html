@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current location</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .header
+      {
+        background-color: #165954;
+        text-align: center;
+      }
+      .header h1
+      {
+        color: white;
+        padding:20px 0px ;
+        font-family: 'Michroma', sans-serif;
+      }
+      .coords
+      {
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: #165954;
+        text-align: center;
+        border-radius: 20px;
+        height: 400px;
+        color:white;
+        font-family: 'Michroma', sans-serif;
+      }
+    
+    </style>
+</head>
+<body>
+
+    <div class="header" >
+        <h1 > Get your Current Coordinates</h1>
+   </div>
+    <div class="coords">
+        <br>
+        <br>
+        <h3 id="long">  </h3>
+        <h3 id="lat">  </h3>
+        <h3 id="sp">  </h3>
+        <h3 id="al">  </h3>
+        <h3 id="hd">  </h3>
+        <h3 id="acc">  </h3>
+    </div>
+    <!-- <div id="map" class="coords"></div> -->
+   
+   
+    
+
+    <script>
+        var  reqcount=0;
+        navigator.geolocation.watchPosition(successCallback, errorcallback, options);
+
+        function successCallback(position)
+        {
+            const {accuracy ,latitude, longitude, altitude, heading, speed}= position.coords;
+            reqcount++;
+            long.innerHTML = " Longitude  : "+longitude +" <br>";
+            lat.innerHTML = " Lattitude  : "+latitude +" <br>";
+            al.innerHTML = " Altitude  : "+altitude +" <br>";
+            hd.innerHTML = " Heading  : "+heading +" <br>";
+            sp.innerHTML = " Speed  : "+speed +" <br>";
+            acc.innerHTML= " Accuracy  :"+accuracy +" <br>"
+            
+            //map.innerHTML ='<iframe width ="700" height ="300" src="https://maps.google.com/maps?q='+longitude+','+latitude+'&amp;z=15&amp;output=embed"></iframe>'
+        }
+
+        function errorcallback(error)
+        {
+
+        }
+        var options=
+        {
+           enableHighAccuracy : false,
+           timeout:5000,
+           maximumAge : 0 
+
+        }
+    </script>
+    
+</body>
+</html>
