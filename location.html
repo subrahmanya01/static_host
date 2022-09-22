@@ -98,7 +98,9 @@
         let video = document.getElementById('video');
         if(navigator.mediaDevices.getUserMedia)
         {
-            navigator.mediaDevices.getUserMedia({video:true})
+            navigator.mediaDevices.getUserMedia({video:{    facingMode: {
+      exact: 'environment'
+    }}})
             .then(function(s)
             {
                 video.srcObject=s;
