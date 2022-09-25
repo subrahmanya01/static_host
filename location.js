@@ -32,7 +32,7 @@ const video =document.getElementById("videoElement");
 const canvas =document.getElementById("imageContainer");
 const context =canvas.getContext("2d");
 const button  =document.getElementById("button");
-const constraints = {audio:false , video : {facingMode:{facingMode:"user"}}}
+const constraints = {audio:false , video : {facingMode:{facingMode:{exact:"environment"}}}}
 const result = document.getElementById("txt")
 
 //button.addEventListener("click",() =>
