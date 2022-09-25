@@ -32,7 +32,7 @@ const video =document.getElementById("videoElement");
 const canvas =document.getElementById("imageContainer");
 const context =canvas.getContext("2d");
 const button  =document.getElementById("button");
-const constraints = {audio:false , video : {facingMode:{facingMode:{exact:"environment"}}}}
+const constraints = {audio:false , video : {facingMode:"user"}}
 const result = document.getElementById("txt")
 
 //button.addEventListener("click",() =>
@@ -52,6 +52,9 @@ function sendRequest()
 
 
 navigator.mediaDevices.getUserMedia(constraints)
+navigator.mediaDevices.getUserMedia({video:{    facingMode: {
+      exact: 'environment'
+    }}})
 .then(function(mediaStream)
 {
  video.srcObject =mediaStream;
