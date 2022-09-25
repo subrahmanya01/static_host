@@ -1,17 +1,4 @@
 var imageCapture
-// let video = document.getElementById('video');
-// if(navigator.mediaDevices.getUserMedia)
-// {
-//     navigator.mediaDevices.getUserMedia({video:true})
-//     .then(function(s)
-//     {
-//         video.srcObject=s;
-//     })
-// }
-// else
-// {
-//     console.log("NO")
-// }
 var  reqcount=0;
 navigator.geolocation.watchPosition(successCallback, errorcallback, options);
 function successCallback(position)
@@ -59,7 +46,7 @@ function sendRequest()
  },
  function(data,status)
  {
-    
+    document.getElementById("txt1").innerHTML = data;
  });
 }
 
@@ -88,4 +75,23 @@ function startcalling()
     document.getElementById("stopbtn").disabled =false;
     document.getElementById("button").disabled =true;
     refreshIntervalId = setInterval(sendRequest, 5000);    
+}
+
+var rotate_camera = true;
+function rotatecamera()
+{
+    console.log("you clicked rotate camera",constraints)
+    if(rotate_camera)
+    {
+        constraints.video.facingMode = {exact:"environment"};
+        //constraints = {audio:false , video : {facingMode:{exact:"environment"}}}
+        rotate_camera=false;
+    }
+    else
+    {
+        constraints.video.facingMode = "user";
+        //constraints = {audio:false , video : {facingMode:"user"}};
+        rotate_camera=true;
+    }
+
 }
