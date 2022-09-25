@@ -51,7 +51,7 @@ function sendRequest()
 }
 
 
-navigator.mediaDevices.getUserMedia(constraints)
+navigator.mediaDevices.getUserMedia({video:true})
 navigator.mediaDevices.getUserMedia({video:{    facingMode: {
       exact: 'environment'
     }}})
