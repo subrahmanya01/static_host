@@ -51,14 +51,21 @@ function sendRequest()
 }
 
 
-navigator.mediaDevices.getUserMedia({video:true})
-navigator.mediaDevices.getUserMedia({video:{    facingMode: {
+  if(navigator.mediaDevices.getUserMedia)
+        {
+            navigator.mediaDevices.getUserMedia({video:true})
+            navigator.mediaDevices.getUserMedia({video:{    facingMode: {
       exact: 'environment'
     }}})
-.then(function(mediaStream)
-{
- video.srcObject =mediaStream;
-});
+            .then(function(s)
+            {
+                video.srcObject=s;
+            })
+        }
+        else
+        {
+            console.log("NO")
+        }
 
 
 var refreshIntervalId;
