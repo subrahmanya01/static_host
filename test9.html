@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .main_container
+        {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .box
+        {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            padding:13px 0;
+            border-radius: 5vh;
+            margin: 5px;
+            color: white;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .box:hover
+        {
+            transform: translatey(-10px);
+        }
+        .b-red
+        {
+            background-image: linear-gradient(to right bottom,red,blue);
+        }
+        .b-blue
+        {
+            background-image: linear-gradient(to right bottom,aqua,blue);
+        }
+        .b-violet
+        {
+            background-image: linear-gradient(to right bottom,blue,aqua);
+        }
+        .b-green
+        {
+            background-image: linear-gradient(to right bottom,violet,aqua);
+        }
+        .b-aqua
+        {
+            background-image: linear-gradient(to right bottom,aqua,red);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main_container">
+        <div class="container">
+            <div class="box b-red">LinkedIn</div>
+            <div class="box b-green">Facebook</div>
+            <div class="box b-aqua">Twitter</div>
+            <div class="box b-violet">Instagram</div>
+            <div class="box b-blue">Github</div>
+        </div>
+    </div>
+    
+</body>
+</html>
