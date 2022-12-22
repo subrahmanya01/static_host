@@ -1,2 +1,2 @@
 # static_host
-This repository is created for testing static website hosting
+This repository is created to test static website hosting
